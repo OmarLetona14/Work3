@@ -68,13 +68,13 @@ public class DoubleLinkedCircularListStudent {
         
         while(temp != null && !passed){
             if(temp.ant != null){
-                System.out.println("Anterior: "+temp.ant.student.getIdStudent() + "\n"+
+                System.out.println("Anterior: "+temp.ant.student.getIdStudent() +
                         "Nombre: " + temp.ant.student.getName());
             }
-            System.out.println("Actual: "+temp.student.getIdStudent() + "\n"+
+            System.out.println("Actual: "+temp.student.getIdStudent() + 
                     "Nombre: "+temp.student.getName());
             if(temp.sig != null){
-                System.out.println("Siguiente: "+temp.sig.student.getIdStudent() + "\n"+
+                System.out.println("Siguiente: "+temp.sig.student.getIdStudent() + 
                         "Nombre: " + temp.sig.student.getName());
             }
             System.out.println("-----------------------------");
