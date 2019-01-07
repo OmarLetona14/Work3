@@ -43,26 +43,28 @@ public class StudentTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
+        Student row = null;
         try {
-            Student row;
-            row = List.studens.getStudentAt(rowIndex+1);
-            if(row!=null){
-                switch (columnIndex) {
-                    case 0:
-                        return row.getIdStudent();
-                    case 1:
-                        return row.getName();
-                    default:
-                        break;
-                }
-                
-            }
-                       
+            if((rowIndex+1)!=getRowCount()){
+                row = List.studens.getStudentAt(rowIndex+1);
+            } 
         } catch (Exception ex) {
             Logger.getLogger(StudentTableModel.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if(row!=null){
+            switch (columnIndex) {
+                case 0:
+                    return row.getIdStudent();
+                case 1:
+                    return row.getName();
+                default:
+                    break;
+            }       
+        }          
         return null; 
     }
+    
+    
     @Override
    public void setValueAt(Object aValue, int rowIndex, int columnIndex)
    {    

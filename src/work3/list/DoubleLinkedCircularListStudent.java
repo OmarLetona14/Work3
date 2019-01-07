@@ -45,18 +45,20 @@ public class DoubleLinkedCircularListStudent {
     }
 
     public Student getStudentAt(int idRef) throws Exception{
-        if(idRef>=1 && !empty()){
-            if(idRef==1){     
-                return actual.student;
-            }else{
-                StudentNodo aux = actual;
-                for(int i=1; i<idRef; i++){
-                    aux = aux.sig;
+        if(!empty()){
+            if(idRef>=1){
+                if(idRef==1){     
+                    return actual.student;
+                }else{
+                    StudentNodo aux = actual;
+                    for(int i=1; i<idRef; i++){
+                        aux = aux.sig;
+                    }
+                    return aux.student;
                 }
-                return aux.student;
             }
+            passed = false;
         }
-        passed = false;
         return null;
     }
      
